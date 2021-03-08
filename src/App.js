@@ -1,14 +1,28 @@
+import React, { Component } from 'react';
+import RestaurantInput from './components/RestaurantInput';
+import Restaurants from './components/Restaurants';
+
+export class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <RestaurantInput />
+        <Restaurants />
+      </div>
+    );
+  }
+};
+
+export default App;
+
+
+
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { addRestaurant } from "./actions/restaurants";
 import RestaurantInput from "./components/RestaurantInput";
 import Restaurants from "./components/Restaurants";
-class App extends Component {
-  handleOnClick = (event) => {
-    this.props.store.dispatch(addRestaurant());
-  };
+
+export class App extends Component {
   render() {
-    debugger;
     return (
       <div className="App">
         <RestaurantInput />
@@ -17,10 +31,5 @@ class App extends Component {
     );
   }
 }
-const mapStateToProps = (state) => {
-  return {
-    restaurants: state.restaurants,
-  };
-};
 
-export default connect(mapStateToProps, { addRestaurant })(App);
+export default App;
